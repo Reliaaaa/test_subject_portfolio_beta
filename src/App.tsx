@@ -1,27 +1,21 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Portfolio from './pages/Portfolio';
-import Admin from './pages/Admin';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Header, Footer } from "./components/Layout";
+import { HomePage } from "./components/HomePage";
+import { SkillsPage } from "./components/SkillsPage";
+import { ProjectsPage } from "./components/ProjectsPage";
 
 export default function App() {
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-grow">
+        <div className="flex-grow">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/admin" element={<Admin />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/skills" element={<SkillsPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
           </Routes>
-        </main>
+        </div>
         <Footer />
       </div>
     </Router>
